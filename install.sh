@@ -25,18 +25,18 @@ then
   cp /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/default_backup
 
   printf '\nCopio file di confiugrazione per Nginx'
-  cp conf/nginx/default_mod /etc/nginx/sites-enabled/default
+  cp conf/nginx/default /etc/nginx/sites-enabled/default
 
   # Modifica i file di configurazione di Php
   printf '\nCreo un backup per il file di configurazione di Php'
-  cp /etc/php/7.4/fpm/php.ini /etc/php/7.3/fpm/php_backup.ini
+  cp /etc/php/7.4/fpm/php.ini /etc/php/7.4/fpm/php_backup.ini
 
   printf '\nCopio file di confiugrazione per Php'
   cp conf/php7.4/php.ini /etc/php/7.4/fpm/php.ini
 
   # Installo PhpMyAdmin
   printf '\nSto installando PhpMyAdmin'
-  cp phpmyadmin /var/www/html/phpmyadmin
+  cp -r phpmyadmin/ /var/www/html/phpmyadmin
 
   printf '\nCreo cartella tmp e do i permessi di lettura e scrittura per PhpMyAdmin'
   mkdir /var/www/html/phpmyadmin/tmp
