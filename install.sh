@@ -7,13 +7,40 @@ read RISPOSTA
 
 if [ ${RISPOSTA} = "y" ]
 then
-  LIST_WEB_SERVICE="nginx php7.3-fpm php7.3-mysql php7.3-mbstring mariadb-server"
-
   # Aggiorna i repositori
   apt update -y
   apt upgrade -y
 
-  apt install -y $LIST_OF_APPS
+  printf '\nInstallo Nginx'
+  apt install nginx -y 
+
+  printf '\nInstallo Php'
+  apt install php7.4-fpm php7.4-mysql php7.4-mbstring -y 
+
+  printf '\nInstallo MariaDB (MySQL)'
+  apt install mariadb-server -y
+
+  # Modifica i file di configurazione di Nginx
+  printf '\nCreo un backup per il file di configurazione di Nginx'
+  cp /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/default_backup
+
+  printf '\nCopio file di confiugrazione per Nginx'
+  cp conf/nginx/default_mod /etc/nginx/sites-enabled/default
+
+  # Modifica i file di configurazione di Php
+  printf '\nCreo un backup per il file di configurazione di Php'
+  cp /etc/php/7.4/fpm/php.ini /etc/php/7.3/fpm/php_backup.ini
+
+  printf '\nCopio file di confiugrazione per Php'
+  cp conf/php7.4/php.ini /etc/php/7.4/fpm/php.ini
+
+  # Installo PhpMyAdmin
+  printf '\nSto installando PhpMyAdmin'
+  cp phpmyadmin /var/www/html/phpmyadmin
+
+  printf '\nCreo cartella tmp e do i permessi di lettura e scrittura per PhpMyAdmin'
+  mkdir /var/www/html/phpmyadmin/tmp
+  chmod 077 /var/www/html/phpmyadmin/tmp
 
 else
   echo ''
