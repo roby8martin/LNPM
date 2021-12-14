@@ -1,6 +1,6 @@
+#!/bin/bash
 echo 'Stai per installare i seguenti servizi:'
-echo ''
-echo 'Nginx, Php, MySQL e PhpMyAdmin'
+echo '\nNginx, Php 7.4, MySQL e PhpMyAdmin 5.1.1\n\n'
 echo 'Continuare? (Y/n):'
 
 read RISPOSTA
@@ -8,16 +8,17 @@ read RISPOSTA
 if [ ${RISPOSTA} = "y" ]
 then
   # Aggiorna i repositori
+  echo '\nSto aggiornando i repositori\n'
   apt update -y
   apt upgrade -y
 
-  printf '\nInstallo Nginx'
+  printf '\nInstallo Nginx\n'
   apt install nginx -y 
 
-  printf '\nInstallo Php'
-  apt install php7.4-fpm php7.4-mysql php7.4-mbstring -y 
+  printf '\nInstallo Php 7.4\n'
+  apt install php7.4-fpm php7.4-mysql php7.4-mbstring php7.4-xml -y 
 
-  printf '\nInstallo MariaDB (MySQL)'
+  printf '\nInstallo MariaDB (MySQL)\n'
   apt install mariadb-server -y
 
   # Modifica i file di configurazione di Nginx
@@ -30,9 +31,6 @@ then
   # Modifica i file di configurazione di Php
   printf '\nCreo un backup per il file di configurazione di Php\n'
   cp /etc/php/7.4/fpm/php.ini /etc/php/7.4/fpm/php_backup.ini
-
-  printf '\nCreo un backup di test per il file di configurazione di Php\n'
-  cp /etc/php/7.4/fpm/php.ini /etc/php/7.4/fpm/php_test.ini
 
   printf '\nCopio file di confiugrazione per Php\n'
   cp -r conf/php7.4/php.ini /etc/php/7.4/fpm/php.ini
