@@ -1,6 +1,6 @@
 #!/bin/bash
 echo 'Stai per installare i seguenti servizi:'
-echo '\nNginx, Php 7.4, MySQL e PhpMyAdmin 5.1.1\n\n'
+printf '\nNginx, Php 7.4, MySQL e PhpMyAdmin 5.1.1\n\n'
 echo 'Continuare? (Y/n):'
 
 read RISPOSTA
@@ -8,7 +8,7 @@ read RISPOSTA
 if [ ${RISPOSTA} = "y" ]
 then
   # Aggiorna i repositori
-  echo '\nSto aggiornando i repositori\n'
+  printf '\nSto aggiornando i repositori\n'
   apt update -y
   apt upgrade -y
 
