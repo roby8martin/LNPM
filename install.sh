@@ -22,10 +22,10 @@ then
 
   # Modifica i file di configurazione di Nginx
   printf '\nCreo un backup per il file di configurazione di Nginx\n'
-  cp /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/default_backup
+  cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default_backup
 
   printf '\nCopio file di confiugrazione per Nginx\n'
-  cp -r conf/nginx/default.conf /etc/nginx/sites-enabled/default
+  cp -r conf/nginx/default.conf /etc/nginx/sites-available/default
 
   # Modifica i file di configurazione di Php
   printf '\nCreo un backup per il file di configurazione di Php\n'
