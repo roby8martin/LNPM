@@ -46,6 +46,15 @@ then
   mkdir /var/www/html/phpmyadmin/tmp
   chmod 077 /var/www/html/phpmyadmin/tmp
 
+  printf "\nCreu utente default admin per l'accesso del database MySql\n"
+  mysql -e "CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';"
+  mysql -e "CREATE USER 'admin'@'%' IDENTIFIED BY 'admin';"
+  mysql -e "GRANT ALL ON *.* TO 'admin'@'localhost';"
+  mysql -e "GRANT ALL ON *.* TO 'admin'@'%';"
+  mysql -e "FLUSH PRIVILEGES;"
+  
+  printf "\n\nInstallazione completata con successo!\n"
+
 else
   echo ''
   echo "Ok Ciao"
