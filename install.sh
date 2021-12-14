@@ -31,6 +31,9 @@ then
   printf '\nCreo un backup per il file di configurazione di Php\n'
   cp /etc/php/7.4/fpm/php.ini /etc/php/7.4/fpm/php_backup.ini
 
+  printf '\nCreo un backup di test per il file di configurazione di Php\n'
+  cp /etc/php/7.4/fpm/php.ini /etc/php/7.4/fpm/php_test.ini
+
   printf '\nCopio file di confiugrazione per Php\n'
   cp -r conf/php7.4/php.ini /etc/php/7.4/fpm/php.ini
 
