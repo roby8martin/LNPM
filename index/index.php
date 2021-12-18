@@ -15,7 +15,7 @@
     <link href="css/dark-mode.css" rel="stylesheet">
     <link href="css/switch-darkmode.css" rel="stylesheet">
 
-    <title>Hello world</title>
+    <title>Index</title>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
@@ -51,6 +51,10 @@
           </li>
         </ul>
         <form class="d-flex">
+          <?php
+            $ip=exec("ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'");
+            echo "Indirizzo IP:".$ip;
+          ?>
           <a class="btn btn-outline-light" href="settings/index.php"><i class="fas fa-cog"></i></a>
         </form>
       </div>
@@ -67,8 +71,8 @@
         <h4>Link Utili</h4> 
         <a href="/phpmyadmin" target="_blank" class="btn btn-warning text-dark"><b>PhpMyAdmin</b> <i class="fas fa-external-link-alt"></i></a> <a href="info/index.php" target="_blank" class="btn btn-primary"><b><i class="fab fa-php"></i> Info</b> <i class="fas fa-external-link-alt"></i></a>
         <?php 
-          //$cerca = exec('dir');
-          $cerca = 'phpmyadmin ciao come test';
+          $cerca = exec('dir');
+          //$cerca = 'phpmyadmin ciao come test';
           $lista = explode(" ", $cerca);
           //echo $lista[1];
           echo' 

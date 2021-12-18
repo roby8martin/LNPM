@@ -15,7 +15,7 @@
     <link href="../css/dark-mode.css" rel="stylesheet">
     <link href="../css/switch-darkmode.css" rel="stylesheet">
 
-    <title>Hello world</title>
+    <title>Index</title>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-icon-57x57.png">
@@ -77,13 +77,13 @@
           </div>
           <h4>Sito Web sviluppato con:</h4>
           <ul>
-            <li><a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/" target="_blank"><b>Bootstrap 5.1 <i class="fas fa-external-link-alt"></i></b></a></li>
-            <li><a href="https://fontawesome.com/" target="_blank"><b>Font Awesome 5.15 <i class="fab fa-font-awesome"></i> <i class="fas fa-external-link-alt"></i></b></a></li>
-            <li><a href="https://www.php.net/" target="_blank"><b>PHP <i class="fab fa-php"></i> <i class="fas fa-external-link-alt"></i></b></a></li>
+            <li><a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/" target="_blank"><h5><b>Bootstrap 5.1 <i class="fas fa-external-link-alt"></i></b></h5></a></li>
+            <li><a href="https://fontawesome.com/" target="_blank"><h5><b>Font Awesome 5.15 <i class="fab fa-font-awesome"></i> <i class="fas fa-external-link-alt"></i></b></h5></a></li>
+            <li><a href="https://www.php.net/" target="_blank"><h5><b>PHP <i class="fab fa-php"></i> <i class="fas fa-external-link-alt"></i></b></h5></a></li>
           </ul>
 
           <h4>Sorgente di questo Sito Web:</h4>
-          <a href="github" target="_blank"><b>Bootstrap 5.1 <i class="fas fa-external-link-alt"></i></b></a>
+          <a href="https://github.com/roby8martin/LNPM/tree/main/index" target="_blank"><h5><b>Github di Index <i class="fab fa-github-square"></i> <i class="fas fa-external-link-alt"></i></b></h5></a>
         </div>
       </div>
     </div>
