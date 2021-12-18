@@ -62,7 +62,7 @@
     <div class="row">
       <div class="col-12">
         <h1>Lista cartelle dei tuoi siti web</h1>
-        <b class="text-danger">Per aprire un sito web premi sopra il nome oppure sul pulsante <a href="img/mmm/flappy_bird" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i></a></i></b> 
+        <b class="text-danger">Per aprire un sito web premi sopra il nome oppure sul pulsante <a href="info/flappy_bird" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt"></i></a></i></b> 
         <br><br>
         <h4>Link Utili</h4> 
         <a href="/phpmyadmin" target="_blank" class="btn btn-warning text-dark"><b>PhpMyAdmin</b> <i class="fas fa-external-link-alt"></i></a> <a href="info/index.php" target="_blank" class="btn btn-primary"><b><i class="fab fa-php"></i> Info</b> <i class="fas fa-external-link-alt"></i></a>
