@@ -53,7 +53,7 @@
         <form class="d-flex">
           <?php
             $ip=exec("ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'");
-            echo "Indirizzo IP:".$ip;
+            echo '<div class="nav-link text-light" aria-current="page">Indirizzo IP:'.$ip.'</div>';
           ?>
           <a class="btn btn-outline-light" href="settings/index.php"><i class="fas fa-cog"></i></a>
         </form>
@@ -71,10 +71,8 @@
         <h4>Link Utili</h4> 
         <a href="/phpmyadmin" target="_blank" class="btn btn-warning text-dark"><b>PhpMyAdmin</b> <i class="fas fa-external-link-alt"></i></a> <a href="info/index.php" target="_blank" class="btn btn-primary"><b><i class="fab fa-php"></i> Info</b> <i class="fas fa-external-link-alt"></i></a>
         <?php 
-          $cerca = exec('dir');
-          //$cerca = 'phpmyadmin ciao come test';
-          $lista = explode(" ", $cerca);
-          //echo $lista[1];
+          $lista = str_word_count(shell_exec('ls /var/www/html'), 1);
+          sort($lista);
           echo' 
             <table class="table">
               <thead>

@@ -51,6 +51,10 @@
           </li>
         </ul>
         <form class="d-flex">
+          <?php
+            $ip=exec("ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'");
+            echo '<div class="nav-link text-light" aria-current="page">Indirizzo IP:'.$ip.'</div>';
+          ?>
           <a class="btn btn-light" href="../settings/index.php"><i class="fas fa-cog"></i></a>
         </form>
       </div>

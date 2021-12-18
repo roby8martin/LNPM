@@ -52,6 +52,10 @@ then
   mysql -e "GRANT ALL PRIVILEGES ON  *.* TO 'admin'@'localhost' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;"
   mysql -e "GRANT ALL PRIVILEGES ON  *.* TO 'admin'@'%' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;"
   
+  printf '\nCopio sito Bello :-)\n'
+  cp -r index/ /var/www/html/
+  mv /var/www/html/index/redirect.php /var/www/html/index.php
+
   clear -x
   printf "\n\nInstallazione completata con successo!\n"
  
