@@ -46,17 +46,17 @@ then
   mkdir /var/www/html/phpmyadmin/tmp
   chmod 077 /var/www/html/phpmyadmin/tmp
 
-  printf "\nCreu utente default admin per l'accesso del database MySql\n"
+  printf "\nCreo utente default admin per l'accesso del database MySql\n"
   mysql -e "CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';"
   mysql -e "CREATE USER 'admin'@'%' IDENTIFIED BY 'admin';"
-  mysql -v -e "GRANT ALL PRIVILEGES ON  *.* TO 'admin'@'localhost' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;"
-  mysql -v -e "GRANT ALL PRIVILEGES ON  *.* TO 'admin'@'%' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;"
+  mysql -e "GRANT ALL PRIVILEGES ON  *.* TO 'admin'@'localhost' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;"
+  mysql -e "GRANT ALL PRIVILEGES ON  *.* TO 'admin'@'%' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;"
   
+  clear -x
   printf "\n\nInstallazione completata con successo!\n"
-
+ 
 else
-  echo ''
-  echo "Ok Ciao"
+  printf "\n Ciao"
 fi
 
 
