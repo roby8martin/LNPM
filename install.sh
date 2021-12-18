@@ -49,9 +49,8 @@ then
   printf "\nCreu utente default admin per l'accesso del database MySql\n"
   mysql -e "CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';"
   mysql -e "CREATE USER 'admin'@'%' IDENTIFIED BY 'admin';"
-  mysql -e "GRANT ALL ON *.* TO 'admin'@'localhost';"
-  mysql -e "GRANT ALL ON *.* TO 'admin'@'%';"
-  mysql -e "FLUSH PRIVILEGES;"
+  mysql -v -e "GRANT ALL PRIVILEGES ON  *.* TO 'admin'@'localhost' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;"
+  mysql -v -e "GRANT ALL PRIVILEGES ON  *.* TO 'admin'@'%' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;"
   
   printf "\n\nInstallazione completata con successo!\n"
 
