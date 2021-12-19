@@ -1,3 +1,7 @@
+<?php
+  //$ip=exec("ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'");
+  $ip='192.168.1.118';
+?>
 <!doctype html>
 <html lang="it">
   <head>
@@ -51,11 +55,35 @@
           </li>
         </ul>
         <form class="d-flex">
-          <?php
-            $ip=exec("ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'");
-            echo '<div class="nav-link text-light" aria-current="page">Indirizzo IP:'.$ip.'</div>';
-          ?>
-          <a class="btn btn-outline-light" href="settings/index.php"><i class="fas fa-cog"></i></a>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <?php echo $ip;?> <i class="fas fa-qrcode"></i>
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Indirizzo IP del Web Server</h5>
+                  <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Chiudi"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-body">
+                  Usa questo indirizzo IP per accedere al server <b><?php echo $ip;?></b>
+                  <br>
+                  <b>Oppure usa il QR Code <i class="fas fa-qrcode"></i></b><br><br>
+                  <div align="center">
+                    <img src="https://chart.apis.google.com/chart?cht=qr&chs=390x350&chl=http://<?php echo $ip;?>/" alt="Il QR Code non viene visualizzato perchè non si è connessi ad internet per utilizzare API di Google per creare il QR Code">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Chiudi</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          &nbsp;<a class="btn btn-outline-light" href="settings/index.php"><i class="fas fa-cog"></i></a>
         </form>
       </div>
     </div>
@@ -71,7 +99,7 @@
         <h4>Link Utili</h4> 
         <a href="/phpmyadmin" target="_blank" class="btn btn-warning text-dark"><b>PhpMyAdmin</b> <i class="fas fa-external-link-alt"></i></a> <a href="info/index.php" target="_blank" class="btn btn-primary"><b><i class="fab fa-php"></i> Info</b> <i class="fas fa-external-link-alt"></i></a>
         <?php 
-          $lista = str_word_count(shell_exec('ls /var/www/html'), 1);
+          $lista = str_word_count(shell_exec('ls /var/www/html/'), 1, '.');
           sort($lista);
           echo' 
             <table class="table">

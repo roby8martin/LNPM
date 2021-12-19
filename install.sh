@@ -1,12 +1,22 @@
 #!/bin/bash
-echo 'Stai per installare i seguenti servizi:'
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+if (( $EUID != 0 )); then
+  clear -x
+  printf "\\e[0;41m${bold}Attenzione! Per eseguire questo script suserve i privilegi di ROOT!${normal}\\e[0m\n\n"
+  exit
+fi
+
+clear -x
+printf "\\e[0;41mLinux\\e[0m \\e[0;42mNginx\\e[0m \\e[0;45mPhp\\e[0m \\e[0;43mMySQL\\e[0m 🐧 🌍 🐘 🗂️   V.1.0\n"
+printf "Benvenuto sull' installazione di un Web Server con i seguenti servizi:"
 printf '\nNginx, Php 7.4, MySQL e PhpMyAdmin 5.1.1\n\n'
 echo 'Continuare? (Y/n):'
 
 read RISPOSTA
 
-if [ ${RISPOSTA} = "y" ]
-then
+if [ ${RISPOSTA} = "y" ] || [ ${RISPOSTA} = "Y" ]; then
   # Aggiorna i repositori
   printf '\nSto aggiornando i repositori\n'
   apt update -y
@@ -22,6 +32,7 @@ then
   apt install mariadb-server -y
 
   # Modifica i file di configurazione di Nginx
+  clear -x
   printf '\nCreo un backup per il file di configurazione di Nginx\n'
   cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default_backup
 
@@ -57,10 +68,14 @@ then
   mv /var/www/html/index/redirect.php /var/www/html/index.php
 
   clear -x
-  printf "\n\nInstallazione completata con successo!\n"
- 
+  printf "\\e[0;42m${bold}Installazione completata con successo ☑️  !${normal}\\e[0m\n\n"
+  printf "${bold}Per accedere a MySQL o \e]8;;http://localhost/phpmyadmin\e\\PhpMyAdmin\e]8;;\e\\ usare${normal}:\n${bold}Username${normal}: admin \n${bold}Password${normal}: admin \n\n"
+
+  printf "${bold}Per accedere al Web Server apri su un browser: ${normal} \n\e]8;;http://localhost\e\\http://localhost/\e]8;;\e\\ \n \n"
+
+  printf "${bold}Developed by  \e]8;;https://github.com/roby8martin\e\\ \\e[0;34mroby8martin\\e[0m \e]8;;\e\\  for developers ${normal} \n\n"
+
 else
-  printf "\n Ciao"
+  printf "\n\n\\e[0;41m${bold}Installazione ANNULLATA con successo ⚠️!${normal}\\e[0m\n\n"
+  printf "${bold}Ciao👋!${normal}\n\n"
 fi
-
-

@@ -41,6 +41,6 @@
  border: 1px solid #ccc;
 } 
 
-[data-theme="dark"] option {
-  background-color: #1c1c1c;
+[data-theme="dark"] .modal-content {
+  background-color: #1c1c1c !important;
 }
