@@ -27,12 +27,13 @@ Una Macchina Linux con:
   
 ## 🖥️ Come installarlo
 Una volta **soddisfatti i requisiti**:
-  - Usare il seguente script per l'installazione automatica:
+  - Usare il seguente script per l'installazione **automatica**:
   ```
   git clone https://github.com/roby8martin/LNPM && cd LNPM && ./install.sh -y
   ```
   
-  - Oppure eseguire lo script manualmente
+  
+  - Oppure eseguire lo script **manualmente**:
     - Clonate questo repository 
     ```
     git clone https://github.com/roby8martin/LNPM
@@ -56,3 +57,15 @@ Una volta **soddisfatti i requisiti**:
     Continuare? (Y/n):
     Y
     ```
+
+## 🧑‍💻 Come usarlo
+Per usarlo potete:
+  - Acedere ai siti Web che si trovano nella cartella:
+  ```
+  cd /var/www/html/
+  ```
+  - Per visualizare i siti andare su: [http://localhost/](http://localhost/)
+  - Per accedere ai database usare [PhpMyAdmin](http://localhost/phpmyadmin) inserendo le seguenti credenziali:
+    -  **Username**: admin
+    -  **Password**: admin
+    
