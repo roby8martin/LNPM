@@ -27,6 +27,12 @@ Una Macchina Linux con:
   
 ## 🖥️ Come installarlo
 Una volta **soddisfatti i requisiti**:
+  - Usare il seguente script per l'installazione automatica:
+  ```
+  git clone https://github.com/roby8martin/LNPM && cd LNPM && ./install.sh -y
+  ```
+  
+  - Oppure eseguire lo script manualmente
   - Clonate questo repository 
   ```
   git clone https://github.com/roby8martin/LNPM
