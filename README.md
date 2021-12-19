@@ -9,3 +9,45 @@ Questo repository se clonato su una macchina linux basato sul packet manger **AP
   - [MySQL](https://mariadb.org/) (MariaDB)
   - [PhpMyAdmin](https://www.phpmyadmin.net/)
 
+## 🧑‍💻 Requisiti
+Una Macchina Linux con:
+  - Packet manger **APT**
+  - **Git** installato:
+  ```
+  sudo apt install git
+  ```
+  - Utente **root abilitato**:
+  ```
+  sudo passwd root
+  ```
+  - **Accesso da terminale dell'utente root**:
+  ```
+  su
+  ```
+  
+## 🖥️ Come installarlo
+Una volta **soddisfatti i requisiti**:
+  - Clonate questo repository 
+  ```
+  git clone https://github.com/roby8martin/LNPM
+  ```
+  
+  - Entrate dentro la cartella LNPM
+  ```
+  cd LNPM
+  ```
+  
+  - Eseguite il file ./install.sh
+  ```
+  ./install.sh
+  ```
+  - Premere Y e Invio per iniziare l'installazione
+  ```
+  Linux Nginx Php MySQL 🐧 🌍 🐘 🗂️   V.1.0
+  Benvenuto sull' installazione di un Web Server con i seguenti servizi:
+  Nginx, Php 7.4, MySQL e PhpMyAdmin 5.1.1
+
+  Continuare? (Y/n):
+  Y
+
+  ```
