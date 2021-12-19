@@ -1,7 +1,7 @@
 {
-    "name": "darkwolf",
+    "name": "Darkwolf",
     "version": "5.1",
-    "description": "darkwolf, A Dark Theme for phpMyAdmin",
+    "description": "Darkwolf, A Dark Theme for phpMyAdmin",
     "author": "SteppenWolf68",
     "url": "https://github.com/SteppenWolf68",
     "supports": ["5.1"]
