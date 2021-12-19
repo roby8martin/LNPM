@@ -1,4 +1,4 @@
-# **L**inux **N**ginx **P**hp **M**ySQL 🐧🗺️🐘🗂️
+# **L**inux **N**ginx **P**hp **M**ySQL 🐧🌍🐘🗂️
 
 <a href="https://github.com/roby8martin/LNPM/releases"><img src="https://img.shields.io/github/release/roby8martin/LNPM?style=flat-square"></a>
 
